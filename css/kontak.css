@@ -1,0 +1,47 @@
+/* =========================================
+   KHUSUS HALAMAN KONTAK
+========================================= */
+
+.kontak-section { padding: 80px 0; }
+.kontak-container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+
+/* Judul Kecil & Garis */
+.kontak-header { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
+.garis-kecil { width: 40px; height: 2px; background-color: var(--teks-gelap); }
+
+/* List Info Kontak (Kiri) */
+.list-kontak { display: flex; flex-direction: column; }
+.kontak-item { display: flex; align-items: center; padding: 20px 0; border-bottom: 1px solid #ddd; text-decoration: none; color: var(--teks-gelap); transition: all 0.3s ease; }
+.kontak-item:last-child { border-bottom: none; }
+.kontak-item:hover { padding-left: 10px; background-color: #f9f9f9; }
+
+.kontak-icon { font-size: 1.8rem; width: 50px; flex-shrink: 0; }
+.kontak-detail { display: flex; flex-direction: column; flex-grow: 1; }
+.kontak-label { font-size: 0.8rem; font-weight: 800; color: var(--biru-section); margin-bottom: 3px; }
+.kontak-value { font-size: 1.05rem; font-weight: 700; color: var(--teks-gelap); }
+.kontak-arrow { color: #ccc; font-size: 1.2rem; transition: 0.3s; }
+.kontak-item:hover .kontak-arrow { color: var(--teks-gelap); }
+
+/* Form (Kanan) */
+.form-box { background-color: #f5f7fa; padding: 40px; border-radius: 15px; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-size: 0.9rem; font-weight: 800; color: var(--teks-gelap); margin-bottom: 8px; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 8px; font-family: var(--font-utama); font-size: 0.95rem; color: var(--teks-gelap); outline: none; transition: 0.3s; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--biru-section); box-shadow: 0 0 0 3px rgba(0, 95, 173, 0.1); }
+.form-group textarea { resize: vertical; }
+
+/* CTA Bawah */
+.cta-about { padding: 100px 0; text-align: left !important; }
+.cta-about-container { display: flex; justify-content: space-between; align-items: center; gap: 40px; }
+.cta-about-text { flex: 1; }
+.cta-about-btn { flex-shrink: 0; }
+.btn-kapsul { display: inline-flex; align-items: center; gap: 15px; background-color: var(--putih); color: var(--teks-gelap); font-weight: 800; font-size: 1.1rem; padding: 18px 40px; border-radius: 50px; text-decoration: none; border: 3px solid var(--teks-gelap); animation: pulse 1.5s infinite; }
+.btn-kapsul:hover { animation: none; background-color: var(--hijau-hover) !important; color: var(--putih) !important; border-color: var(--hijau-hover) !important; transform: scale(1.1); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+
+/* Responsif Kontak */
+@media (max-width: 992px) {
+    .kontak-container { grid-template-columns: 1fr; gap: 50px; }
+    .form-box { padding: 25px; }
+    .cta-about-container { flex-direction: column; text-align: center; }
+    .cta-about-text h2 { font-size: 2rem !important; }
+}

@@ -1,0 +1,88 @@
+/* =========================================
+   KHUSUS SUB-HALAMAN LAYANAN (DESAIN BARU)
+========================================= */
+
+/* Warna Background Khusus Halaman Ini */
+.bg-light { background-color: #f4f6f8; }
+.bg-white { background-color: #ffffff; }
+
+/* Tipografi */
+.judul-hero { font-size: 3.5rem; line-height: 1.1; margin-bottom: 15px; font-weight: 800; color: var(--teks-gelap); }
+.sub-judul-hero { font-size: 2rem; line-height: 1.2; margin-bottom: 20px; font-weight: 800; color: var(--teks-gelap); }
+.section-label { display: inline-flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 800; color: var(--teks-abu); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
+.section-label::before { content: ""; display: block; width: 30px; height: 2px; background-color: var(--teks-abu); }
+
+/* --- SEC 1: HERO --- */
+.hero-polo { padding: 100px 0; }
+.hero-polo-container { display: flex; align-items: center; justify-content: space-between; gap: 60px; }
+.hero-polo-text { flex: 1; }
+.hero-polo-image { flex: 1; display: flex; justify-content: flex-end; }
+.hero-polo-image img { width: 100%; max-width: 500px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+
+/* --- SEC 2: INFO & SYARAT --- */
+.info-polo { padding: 100px 0; }
+.info-container { display: grid; grid-template-columns: 1.3fr 1fr; gap: 60px; align-items: flex-start; }
+
+/* List Centang */
+.list-check { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 40px; }
+.list-check-item { display: flex; align-items: flex-start; gap: 10px; font-size: 1.05rem; color: var(--teks-gelap); }
+.list-check-item i { color: #25D366; font-size: 1.2rem; margin-top: 3px; }
+
+/* Kotak Informasi Penting */
+.info-box { background: #ffffff; border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.info-box h3 { font-size: 1.5rem; margin-bottom: 25px; font-weight: 800; }
+.info-item { margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 25px; }
+.info-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.info-item h4 { font-size: 1.1rem; font-weight: 800; margin-bottom: 10px; }
+.info-item p { font-size: 0.95rem; color: var(--teks-abu); line-height: 1.7; margin: 0; }
+
+/* --- SEC 3 & 4: UKURAN & HARGA --- */
+.section-tabel { padding: 100px 0; }
+.section-tabel h2 { font-size: 2rem; margin-bottom: 30px; font-weight: 800; text-decoration: underline; }
+.tabel-wrapper { background: #ffffff; border: 1px solid #ddd; border-radius: 10px; overflow: hidden; }
+.tabel-wrapper img { width: 100%; height: auto; display: block; cursor: pointer; }
+
+/* --- SEC 5: CTA --- */
+.cta-polos { padding: 100px 0; text-align: center; }
+.cta-polos h2 { font-size: 3rem; line-height: 1.2; margin-bottom: 20px; font-weight: 800; color: var(--teks-gelap); }
+.cta-polos p { font-size: 1.2rem; color: var(--teks-abu); margin-bottom: 40px; }
+
+/* Tombol Kapsul Biru */
+.btn-kapsul-biru { 
+    display: inline-flex; align-items: center; gap: 15px; 
+    background-color: var(--biru-section); color: var(--putih); 
+    font-weight: 800; font-size: 1.1rem; padding: 18px 40px; 
+    border-radius: 50px; text-decoration: none; border: none; 
+    transition: all 0.3s ease;
+}
+.btn-kapsul-biru:hover { 
+    background-color: var(--hijau-hover); 
+    transform: scale(1.05); 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2); 
+}
+
+/* --- MODAL LIGHTBOX --- */
+.modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
+.modal-content { max-width: 95%; max-height: 95vh; object-fit: contain; }
+.close-modal { position: absolute; top: 20px; right: 40px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; }
+
+/* --- RESPONSIF MOBILE --- */
+@media (max-width: 992px) {
+    .hero-polo-container { flex-direction: column; text-align: center; }
+    .hero-polo-image { justify-content: center; margin-top: 40px; }
+    .judul-hero { font-size: 2.5rem; }
+    
+    .info-container { grid-template-columns: 1fr; }
+    .list-check { grid-template-columns: 1fr; }
+    
+    .cta-polos h2 { font-size: 2.2rem; }
+}
+/* =========================================
+   PERBAIKAN JARAK (PADDING) UNTUK MOBILE
+========================================= */
+@media (max-width: 768px) {
+    .info-left {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}

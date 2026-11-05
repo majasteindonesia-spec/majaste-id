@@ -1,0 +1,45 @@
+/* =========================================
+   KHUSUS HALAMAN LAYANAN (MAIN)
+========================================= */
+
+/* Grid Layanan */
+.layanan-list { padding: 80px 0; }
+.layanan-grid-desain { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-bottom: 60px; }
+.layanan-grid-desain.bawah { grid-template-columns: repeat(3, 1fr); max-width: 85%; margin: 0 auto; }
+
+/* Item Layanan */
+.layanan-item { text-align: center; display: flex; flex-direction: column; align-items: center; }
+.layanan-img-box { width: 100%; aspect-ratio: 1 / 1; border: 3px solid var(--teks-gelap); background-color: var(--putih); display: flex; justify-content: center; align-items: center; margin-bottom: 20px; padding: 15px; }
+.layanan-img-box img { width: 80%; height: 80%; object-fit: contain; }
+.layanan-item h3 { font-size: 1.6rem; margin-bottom: 15px; text-transform: capitalize; font-weight: 800; }
+.layanan-item p { font-size: 0.95rem; color: var(--teks-gelap); line-height: 1.6; margin-bottom: 20px; flex-grow: 1; }
+
+/* Tombol Kecil "Selengkapnya" */
+.btn-kecil { padding: 8px 30px; font-size: 0.9rem; border-radius: 50px; width: 100%; max-width: 200px; }
+
+/* Disclaimer Section */
+.disclaimer-box { background-color: var(--putih); padding: 30px 40px; border-radius: 20px; margin-bottom: 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+.disclaimer-box:last-child { margin-bottom: 0; }
+.disclaimer-box h4 { font-size: 1.2rem; margin-bottom: 10px; font-weight: 800; }
+.disclaimer-box p { font-size: 1rem; color: var(--teks-gelap); line-height: 1.6; max-width: 900px; margin: 0 auto; }
+
+/* CTA Bawah */
+.cta-about { padding: 100px 0; text-align: left !important; }
+.cta-about-container { display: flex; justify-content: space-between; align-items: center; gap: 40px; }
+.cta-about-text { flex: 1; }
+.cta-about-btn { flex-shrink: 0; }
+.btn-kapsul { display: inline-flex; align-items: center; gap: 15px; background-color: var(--putih); color: var(--teks-gelap); font-weight: 800; font-size: 1.1rem; padding: 18px 40px; border-radius: 50px; text-decoration: none; border: 3px solid var(--teks-gelap); animation: pulse 1.5s infinite; }
+.btn-kapsul:hover { animation: none; background-color: var(--hijau-hover) !important; color: var(--putih) !important; border-color: var(--hijau-hover) !important; transform: scale(1.1); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+
+/* Responsif Layanan */
+@media (max-width: 992px) {
+    .layanan-grid-desain { grid-template-columns: repeat(2, 1fr); }
+    .layanan-grid-desain.bawah { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
+    .cta-about-container { flex-direction: column; text-align: center; }
+    .cta-about-text h2 { font-size: 2rem !important; }
+}
+
+@media (max-width: 768px) {
+    .layanan-grid-desain { grid-template-columns: 1fr; }
+    .layanan-grid-desain.bawah { grid-template-columns: 1fr; }
+}

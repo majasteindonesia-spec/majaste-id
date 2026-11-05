@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - MAJASTE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS PUSAT & CSS KONTAK -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/kontak.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo-area">
+                <img src="assets/images/logo.png" alt="Logo Majaste" class="logo-img">
+                <span class="logo-text">MAJASTE</span>
+            </a>
+            <button class="hamburger"><i class="fa-solid fa-bars"></i></button>
+            <nav class="nav-menu">
+                <a href="tentang.html">Tentang Kami</a>
+                <div class="dropdown">
+                    <a href="layanan.html" class="dropbtn">Layanan <i class="fa-solid fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="layanan/kaos.html">Kaos</a><a href="layanan/polo.html">Polo</a><a href="layanan/jersey.html">Jersey</a><a href="layanan/kemejapdh.html">Kemeja PDH</a><a href="layanan/jaketsingle.html">Jaket Single</a><a href="layanan/jaketdouble.html">Jaket Double</a><a href="layanan/training.html">Training</a>
+                    </div>
+                </div>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="kontak.html" style="font-weight: 800;">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section-biru tentang-hero">
+        <div class="container">
+            <h1 class="hero-title-left" style="font-size: 3.5rem; line-height: 1.2; margin-bottom: 25px;">Mari Mulai dengan<br>Percakapan</h1>
+            <p class="section-desc" style="max-width: 800px; margin-bottom: 0; font-size: 1.2rem; line-height: 1.7;">Ceritakan kebutuhan apparel yang ingin kamu buat. Kamu bisa menghubungi tim MAJASTE untuk menjadwalkan konsultasi dan membahas pilihan produk, spesifikasi, jumlah, anggaran, serta deadline.</p>
+        </div>
+    </section>
+
+    <section class="kontak-section section-putih">
+        <div class="container kontak-container">
+            <div class="kontak-info">
+                <div class="kontak-header"><span class="garis-kecil"></span><span class="sub-label" style="color: var(--teks-gelap); margin-bottom: 0;">HUBUNGI KAMI</span></div>
+                <h2 style="font-size: 2.5rem; line-height: 1.1; margin-bottom: 20px;">Konsultasi dan<br>Pertemuan</h2>
+                <p style="color: var(--teks-abu); margin-bottom: 40px; font-size: 1.05rem; line-height: 1.7;">Kamu dapat menghubungi tim MAJASTE melalui Whatsapp untuk menjadwalkan pertemuan. Konsultasi dapat dilakukan di tempat produksi atau lokasi lain yang disepakati bersama.</p>
+                <div class="list-kontak">
+                    <a href="https://wa.me/628112539312" target="_blank" class="kontak-item">
+                        <div class="kontak-icon"><i class="fa-brands fa-whatsapp" style="color: #25D366;"></i></div>
+                        <div class="kontak-detail"><span class="kontak-label">WHATSAPP</span><span class="kontak-value">08112539312</span></div>
+                        <i class="fa-solid fa-arrow-right kontak-arrow"></i>
+                    </a>
+                    <a href="https://instagram.com/majaste.sablonkaos" target="_blank" class="kontak-item">
+                        <div class="kontak-icon"><i class="fa-brands fa-instagram" style="color: #E1306C;"></i></div>
+                        <div class="kontak-detail"><span class="kontak-label">INSTAGRAM</span><span class="kontak-value">@majaste.sablonkaos</span></div>
+                        <i class="fa-solid fa-arrow-right kontak-arrow"></i>
+                    </a>
+                    <div class="kontak-item" style="cursor: default;">
+                        <div class="kontak-icon"><i class="fa-solid fa-envelope" style="color: #EA4335;"></i></div>
+                        <div class="kontak-detail"><span class="kontak-label">EMAIL</span><span class="kontak-value">majasteindonesia@gmail.com</span></div>
+                    </div>
+                    <div class="kontak-item" style="cursor: default;">
+                        <div class="kontak-icon"><i class="fa-brands fa-facebook" style="color: #1877F2;"></i></div>
+                        <div class="kontak-detail"><span class="kontak-label">FACEBOOK</span><span class="kontak-value">Majaste Indonesia</span></div>
+                    </div>
+                    <div class="kontak-item" style="cursor: default;">
+                        <div class="kontak-icon"><i class="fa-solid fa-location-dot" style="color: #D32F2F;"></i></div>
+                        <div class="kontak-detail"><span class="kontak-label">ALAMAT</span><span class="kontak-value">Mangunsari Gunungpati Kota Semarang</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="kontak-form-wrapper">
+                <div class="kontak-header"><span class="garis-kecil"></span><span class="sub-label" style="color: var(--teks-gelap); margin-bottom: 0;">Mulai Konsultasi</span></div>
+                <h2 style="font-size: 2.5rem; line-height: 1.1; margin-bottom: 15px;">Kirim Pertanyaan</h2>
+                <p style="color: var(--teks-abu); margin-bottom: 30px; font-size: 1.05rem; line-height: 1.7;">Sampaikan nama, kontak yang bisa dihubungi, jenis produk, jumlah pesanan, dan gambaran kebutuhanmu. Tim MAJASTE dapat menindaklanjuti melalui WhatsApp.</p>
+                <form id="form-wa" class="form-box">
+                    <div class="form-group"><label for="nama">Nama kamu</label><input type="text" id="nama" placeholder="Masukkan nama" required></div>
+                    <div class="form-group"><label for="produk">Jenis produk</label>
+                        <select id="produk" required>
+                            <option value="Kaos">Kaos</option><option value="Polo">Polo</option><option value="Jersey">Jersey</option><option value="Kemeja PDH">Kemeja PDH</option><option value="Jaket Single">Jaket Single</option><option value="Jaket Double">Jaket Double</option><option value="Training">Training</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label for="jumlah">Jumlah pesanan</label><input type="text" id="jumlah" placeholder="Contoh: 50 pcs" required></div>
+                    <div class="form-group"><label for="pesan">Ceritakan kebutuhanmu</label><textarea id="pesan" rows="4" placeholder="Ceritakan konsep, kebutuhan, atau deadline..." required></textarea></div>
+                    <button type="submit" class="btn btn-primary btn-animasi" style="width: 100%; border-radius: 50px; background-color: var(--biru-header);">Kirim melalui WhatsApp <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <div class="logo-area"><img src="assets/images/logo.png" alt="Logo Majaste" class="logo-img"><span class="logo-text">MAJASTE</span></div>
+                <p>Partner produksi apparel untuk berbagai kebutuhan. Mulai dari konsultasi, desain, produksi, hingga pesanan siap diterima.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Jelajahi</h3>
+                <a href="tentang.html">Tentang Kami</a><a href="layanan.html">Layanan</a><a href="portfolio.html">Portfolio</a><a href="kontak.html">Kontak</a>
+            </div>
+            <div class="footer-contact">
+                <h3>Hubungi Kami</h3>
+                <a href="https://wa.me/628112539312"><i class="fa-brands fa-whatsapp"></i> 628112539312</a>
+                <a href="https://instagram.com/majaste.sablonkaos" target="_blank"><i class="fa-brands fa-instagram"></i> @majaste.sablonkaos</a>
+                <a href="#"><i class="fa-brands fa-facebook"></i> Majaste Indonesia</a>
+                <a href="mailto:majasteindonesia@gmail.com"><i class="fa-solid fa-envelope"></i> majasteindonesia@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

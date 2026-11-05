@@ -1,0 +1,77 @@
+/* =========================================
+   KHUSUS HALAMAN HOME
+========================================= */
+
+/* Hero Section */
+.hero { padding-top: 80px; padding-bottom: 40px; }
+.hero-title { font-size: 3rem; margin-bottom: 20px; }
+.hero-subtitle { font-size: 1.2rem; color: var(--teks-abu); margin-bottom: 40px; }
+.hero-image-wrapper { width: 100%; margin-bottom: 40px; }
+.hero-img { width: 100%; max-width: 900px; height: auto; display: block; margin: 0 auto; }
+.hero-buttons { display: flex; justify-content: center; gap: 20px; }
+
+/* USP Section */
+.usp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.usp-card { border: 2px solid var(--teks-gelap); border-radius: 12px; padding: 30px 20px; }
+.usp-icon { font-size: 2.5rem; margin-bottom: 15px; color: var(--teks-gelap); }
+.usp-card h3 { font-size: 1.1rem; margin-bottom: 10px; }
+.usp-card p { font-size: 0.9rem; color: var(--teks-abu); line-height: 1.5; }
+
+/* Gambar Section Tentang (Home) */
+.tentang .tentang-image img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Cara Kerja & Cara Order */
+.image-flow-wrapper { margin-top: 40px; width: 100%; }
+.image-flow-wrapper .img-fluid { max-width: 100%; height: auto; border-radius: 10px; display: block; margin: 0 auto; }
+
+/* Portfolio Home */
+.port-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 40px; margin-bottom: 30px; }
+.port-card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 10px; margin-bottom: 15px; background-color: #f0f0f0; }
+.port-card h3 { font-size: 1.5rem; margin-bottom: 5px; }
+.port-note { font-size: 0.85rem; color: var(--teks-abu); max-width: 800px; margin: 0 auto; }
+
+/* Layanan Home (Ikon Bulat) */
+.layanan-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px; }
+.layanan-card { display: flex; flex-direction: column; align-items: center; }
+.layanan-icon-wrapper { width: 150px; height: 150px; aspect-ratio: 1 / 1; flex-shrink: 0; border-radius: 50%; background-color: var(--putih); display: flex; justify-content: center; align-items: center; margin-bottom: 20px; border: 3px solid var(--teks-gelap); overflow: hidden; }
+.layanan-icon-wrapper img { width: 65%; height: 65%; object-fit: contain; }
+.layanan-title { font-size: 1.4rem; color: var(--putih); text-decoration: underline; text-transform: uppercase; margin-bottom: 15px; }
+.layanan-desc-box { background-color: var(--putih); color: var(--teks-gelap); padding: 20px; border-radius: 0px; font-size: 0.9rem; text-align: left; height: 100%; }
+
+/* FAQ Section */
+.faq-container { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: flex-start; }
+.faq-text h2 { margin-top: 10px; margin-bottom: 20px; }
+.faq-text p { color: var(--teks-abu); margin-bottom: 30px; }
+.faq-item { border-bottom: 1px solid #ddd; padding: 15px 0; }
+.faq-label { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+.faq-label h4 { font-size: 1rem; font-weight: 700; }
+.faq-label i { font-size: 1.2rem; transition: transform 0.3s; }
+.faq-input { display: none; }
+.faq-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+.faq-content p { padding-top: 15px; font-size: 0.95rem; color: var(--teks-abu); line-height: 1.6; }
+.faq-input:checked ~ .faq-content { max-height: 500px; }
+.faq-input:checked ~ .faq-label i { transform: rotate(180deg); }
+
+/* Testimoni Home */
+.testi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 50px; text-align: left; }
+.testi-card { background-color: var(--putih); padding: 30px 20px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); display: flex; flex-direction: column; justify-content: space-between; }
+.quote-icon { font-size: 2rem; color: #d1d8e0; margin-bottom: 15px; }
+.testi-card p { font-size: 0.95rem; color: var(--teks-gelap); margin-bottom: 25px; flex-grow: 1; line-height: 1.6; }
+.testi-card h4 { font-size: 0.9rem; font-weight: 800; text-align: right; }
+
+/* Responsif Home */
+@media (max-width: 992px) {
+    .usp-grid, .port-grid, .layanan-grid, .testi-grid { grid-template-columns: repeat(2, 1fr); }
+    .faq-container { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 768px) {
+    .hero-title { font-size: 2rem; }
+    .hero-buttons { flex-direction: column; }
+    .usp-grid, .port-grid, .layanan-grid, .testi-grid { grid-template-columns: 1fr; }
+}

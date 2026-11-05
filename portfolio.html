@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - MAJASTE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS PUSAT & CSS PORTFOLIO -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo-area">
+                <img src="assets/images/logo.png" alt="Logo Majaste" class="logo-img">
+                <span class="logo-text">MAJASTE</span>
+            </a>
+            <button class="hamburger"><i class="fa-solid fa-bars"></i></button>
+            <nav class="nav-menu">
+                <a href="tentang.html">Tentang Kami</a>
+                <div class="dropdown">
+                    <a href="layanan.html" class="dropbtn">Layanan <i class="fa-solid fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="layanan/kaos.html">Kaos</a><a href="layanan/polo.html">Polo</a><a href="layanan/jersey.html">Jersey</a><a href="layanan/kemejapdh.html">Kemeja PDH</a><a href="layanan/jaketsingle.html">Jaket Single</a><a href="layanan/jaketdouble.html">Jaket Double</a><a href="layanan/training.html">Training</a>
+                    </div>
+                </div>
+                <a href="portfolio.html" style="font-weight: 800;">Portfolio</a>
+                <a href="kontak.html">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section-biru tentang-hero">
+        <div class="container">
+            <span class="sub-label text-white">PORTFOLIO</span>
+            <h1 class="hero-title-left" style="font-size: 3.5rem;">Pekerjaan yang<br>Pernah Kami Tangani</h1>
+            <p class="section-desc" style="max-width: 800px; margin-bottom: 0;">Setiap pesanan berangkat dari kebutuhan yang berbeda. Di halaman ini, kamu dapat melihat beberapa gambaran pekerjaan MAJASTE untuk berbagai kebutuhan komunitas, kegiatan, perusahaan, instansi, dan kelompok.</p>
+        </div>
+    </section>
+
+    <section class="portfolio-section section-putih">
+        <div class="container text-center">
+            <p class="petunjuk-klik">Klik gambar untuk memperbesar.</p>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="kaos">KAOS</button>
+                <button class="filter-btn" data-filter="polo">POLO</button>
+                <button class="filter-btn" data-filter="jersey">JERSEY</button>
+                <button class="filter-btn" data-filter="kemejapdh">KEMEJA PDH</button>
+                <button class="filter-btn" data-filter="jaketsingle">JAKET SINGLE</button>
+                <button class="filter-btn" data-filter="jaketdouble">JAKET DOUBLE</button>
+                <button class="filter-btn" data-filter="training">TRAINING</button>
+            </div>
+
+            <!-- DROPDOWN FILTER KHUSUS HP -->
+            <select id="filter-select" class="filter-dropdown">
+                <option value="kaos">Pilih Kategori: KAOS</option>
+                <option value="polo">POLO</option>
+                <option value="jersey">JERSEY</option>
+                <option value="kemejapdh">KEMEJA PDH</option>
+                <option value="jaketsingle">JAKET SINGLE</option>
+                <option value="jaketdouble">JAKET DOUBLE</option>
+                <option value="training">TRAINING</option>
+            </select>
+
+            <div class="portfolio-grid" id="portfolio-grid"></div>
+
+            <div class="pagination">
+                <button id="prev-btn" class="page-btn arrow"><i class="fa-solid fa-circle-arrow-left"></i></button>
+                <div id="page-numbers" class="page-numbers"></div>
+                <button id="next-btn" class="page-btn arrow"><i class="fa-solid fa-circle-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-biru cta-about">
+        <div class="container cta-about-container">
+            <div class="cta-about-text">
+                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Punya Referensi atau Konsep<br>Sendiri?</h2>
+                <p class="section-desc" style="margin-bottom: 0; max-width: 600px;">Kirimkan referensi desain atau ceritakan kebutuhanmu. Tim MAJASTE dapat membantu membahas kemungkinan produksi sesuai spesifikasi dan jumlah pesanan.</p>
+            </div>
+            <div class="cta-about-btn">
+                <a href="https://wa.me/628112539312" target="_blank" class="btn-kapsul">Diskusikan Proyekmu <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <div class="logo-area"><img src="assets/images/logo.png" alt="Logo Majaste" class="logo-img"><span class="logo-text">MAJASTE</span></div>
+                <p>Partner produksi apparel untuk berbagai kebutuhan. Mulai dari konsultasi, desain, produksi, hingga pesanan siap diterima.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Jelajahi</h3>
+                <a href="tentang.html">Tentang Kami</a><a href="layanan.html">Layanan</a><a href="portfolio.html">Portfolio</a><a href="kontak.html">Kontak</a>
+            </div>
+            <div class="footer-contact">
+                <h3>Hubungi Kami</h3>
+                <a href="https://wa.me/628112539312"><i class="fa-brands fa-whatsapp"></i> 628112539312</a>
+                <a href="https://instagram.com/majaste.sablonkaos" target="_blank"><i class="fa-brands fa-instagram"></i> @majaste.sablonkaos</a>
+                <a href="#"><i class="fa-brands fa-facebook"></i> Majaste Indonesia</a>
+                <a href="mailto:majasteindonesia@gmail.com"><i class="fa-solid fa-envelope"></i> majasteindonesia@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="image-modal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modal-img" oncontextmenu="return false;">
+        <div class="image-protection"></div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

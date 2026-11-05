@@ -1,0 +1,54 @@
+/* =========================================
+   KHUSUS HALAMAN TENTANG KAMI
+========================================= */
+
+/* Hero Tentang */
+.tentang-hero { padding: 100px 0 120px 0; text-align: left !important; }
+.hero-title-left { font-size: 4rem; color: var(--putih); line-height: 1.1; margin-bottom: 25px; }
+
+/* Section Perjalanan */
+.teks-perjalanan p { font-size: 1.05rem; color: var(--teks-gelap); margin-bottom: 15px; line-height: 1.8; }
+.blockquote { border-left: 4px solid #5b7ab8; padding-left: 20px; margin-top: 30px; margin-left: 20px; }
+.blockquote p { font-weight: 800; font-size: 1.1rem; line-height: 1.6; color: var(--teks-gelap); }
+
+/* Mengatur Gambar Perjalanan & Founder (Besar 100%) */
+.perjalanan .tentang-image img, 
+.founder .tentang-image img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Perataan: Perjalanan Rata Atas, Founder Rata Tengah */
+.perjalanan .tentang-container { align-items: flex-start !important; }
+.founder .tentang-container { align-items: center !important; }
+
+/* Section Value (Glassmorphism) */
+.value-section { padding: 100px 0; position: relative; background-size: cover; background-position: center; background-attachment: fixed; }
+.value-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.7); }
+.value-section .container { text-align: center; }
+.value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; margin-bottom: 30px; }
+.value-card { background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.6); border-radius: 20px; padding: 40px 30px; text-align: left; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05); }
+.value-number { display: block; font-weight: 800; font-size: 1rem; margin-bottom: 20px; }
+.value-card h3 { font-size: 1.8rem; margin-bottom: 15px; }
+.value-card p { font-size: 1rem; line-height: 1.6; color: var(--teks-gelap); }
+.value-approach { background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.8); border-radius: 20px; padding: 50px; text-align: left; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05); }
+.value-approach p { font-size: 1.05rem; line-height: 1.7; }
+
+/* CTA Bawah */
+.cta-about { padding: 100px 0; text-align: left !important; }
+.cta-about-container { display: flex; justify-content: space-between; align-items: center; gap: 40px; }
+.cta-about-text { flex: 1; }
+.cta-about-btn { flex-shrink: 0; }
+.btn-kapsul { display: inline-flex; align-items: center; gap: 15px; background-color: var(--putih); color: var(--teks-gelap); font-weight: 800; font-size: 1.1rem; padding: 18px 40px; border-radius: 50px; text-decoration: none; border: 3px solid var(--teks-gelap); animation: pulse 1.5s infinite; }
+.btn-kapsul:hover { animation: none; background-color: var(--hijau-hover) !important; color: var(--putih) !important; border-color: var(--hijau-hover) !important; transform: scale(1.1); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+
+/* Responsif Tentang */
+@media (max-width: 992px) {
+    .hero-title-left { font-size: 3rem; }
+    .value-grid { grid-template-columns: 1fr; }
+    .cta-about-container { flex-direction: column; text-align: center; }
+    .cta-about-text h2 { font-size: 2rem !important; }
+    .blockquote { margin-left: 0; }
+}
