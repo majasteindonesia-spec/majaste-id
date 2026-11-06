@@ -1,17 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
     
-    // =========================================
-    // 1. LOGIKA HEADER (HAMBURGER & DROPDOWN)
-    // =========================================
+    // 1. LOGIKA HEADER
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
-    
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', function(e) {
             e.preventDefault();
             navMenu.classList.toggle('active');
         });
-
         const dropBtns = document.querySelectorAll('.dropbtn');
         dropBtns.forEach(btn => {
             btn.addEventListener('click', function(e) {
@@ -23,27 +19,19 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // =========================================
     // 2. LOGIKA RANDOM GAMBAR (HOME)
-    // =========================================
     function getRandomNumber(max) { return Math.floor(Math.random() * max) + 1; }
     const batasMaksimalHome = 5; 
-
     const imgKaos = document.getElementById("img-kaos");
     if (imgKaos) imgKaos.src = `assets/portfolio/kaos/majaste-kaos (${getRandomNumber(batasMaksimalHome)}).jpg`;
-
     const imgPolo = document.getElementById("img-polo");
     if (imgPolo) imgPolo.src = `assets/portfolio/polo/majaste-polo (${getRandomNumber(batasMaksimalHome)}).jpg`;
-
     const imgJaket = document.getElementById("img-jaket");
     if (imgJaket) imgJaket.src = `assets/portfolio/jaketsingle/majaste-sl (${getRandomNumber(batasMaksimalHome)}).jpg`;
-
     const imgJersey = document.getElementById("img-jersey");
     if (imgJersey) imgJersey.src = `assets/portfolio/jersey/majaste-jersey (${getRandomNumber(batasMaksimalHome)}).jpg`;
 
-    // =========================================
-    // 3. LOGIKA PORTFOLIO (FILTER, PAGINATION & CAROUSEL)
-    // =========================================
+    // 3. LOGIKA PORTFOLIO
     if (document.getElementById('portfolio-grid')) {
         const config = {
             'kaos':        { prefix: 'majaste-kaos', folder: 'kaos' },
@@ -69,10 +57,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const filterSelect = document.getElementById('filter-select');
 
         function checkScreenSize() {
-            // Jika di HP, tampilkan lebih banyak gambar dalam 1 halaman 
-            // karena menggunakan sistem geser (carousel).
             if (window.innerWidth <= 768) { 
-                itemsPerPage = 10; 
+                itemsPerPage = 100; // Tampilkan semua gambar di carousel HP
             } else { 
                 itemsPerPage = 8; 
             }
@@ -141,7 +127,9 @@ document.addEventListener("DOMContentLoaded", function() {
         function renderPagination() {
             pageNumbers.innerHTML = '';
             const totalPages = Math.ceil(totalDetectedImages / itemsPerPage);
-            if (totalPages <= 1) return; 
+            
+            // Jangan tampilkan pagination jika di HP atau hanya 1 halaman
+            if (totalPages <= 1 || window.innerWidth <= 768) return; 
 
             for (let i = 1; i <= totalPages; i++) {
                 const span = document.createElement('span');
@@ -183,9 +171,7 @@ document.addEventListener("DOMContentLoaded", function() {
         };
     }
 
-    // =========================================
-    // 4. LOGIKA KONTAK (KIRIM WA)
-    // =========================================
+    // 4. LOGIKA KONTAK
     const formWA = document.getElementById('form-wa');
     if (formWA) {
         formWA.addEventListener('submit', function(e) {
@@ -201,9 +187,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // =========================================
-    // 5. LOGIKA LIGHTBOX (PORTFOLIO & FLOWCHART)
-    // =========================================
+    // 5. LOGIKA LIGHTBOX
     const modal = document.getElementById("image-modal");
     const modalImg = document.getElementById("modal-img");
     const closeModal = document.querySelector(".close-modal");
@@ -233,5 +217,4 @@ document.addEventListener("DOMContentLoaded", function() {
         img.style.cursor = 'pointer';
         img.addEventListener('click', function() { window.open(this.src, '_blank'); });
     });
-
 });
