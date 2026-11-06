@@ -12,9 +12,7 @@
 /* Filter Dropdown (Mobile) */
 .filter-dropdown { display: none; width: 100%; padding: 12px; border-radius: 8px; border: 2px solid var(--teks-gelap); font-family: var(--font-utama); font-weight: 700; font-size: 1rem; margin-bottom: 30px; }
 
-/* =========================================
-   GRID GALERI (DESKTOP)
-========================================= */
+/* GRID GALERI (DESKTOP) */
 .portfolio-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 40px; }
 .portfolio-item { position: relative; width: 100%; aspect-ratio: 1 / 1; border: 1px solid #ddd; overflow: hidden; border-radius: 8px; }
 .portfolio-item img { width: 100%; height: 100%; object-fit: cover; cursor: pointer; transition: transform 0.3s ease; -webkit-user-drag: none; user-select: none; }
@@ -43,11 +41,14 @@
 .btn-kapsul:hover { animation: none; background-color: var(--hijau-hover) !important; color: var(--putih) !important; border-color: var(--hijau-hover) !important; transform: scale(1.1); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
 
 /* =========================================
-   CAROUSEL MODE (TAMPILAN MOBILE)
+   CAROUSEL MODE & HIDE PAGINATION (MOBILE)
 ========================================= */
 @media (max-width: 768px) {
     .filter-buttons { display: none; }
     .filter-dropdown { display: block; }
+
+    /* Sembunyikan Pagination di HP */
+    #pagination-container { display: none !important; }
 
     /* Mengubah Grid menjadi Carousel Horizontal */
     .portfolio-grid.carousel-mode {
@@ -57,17 +58,15 @@
         scroll-snap-type: x mandatory;
         gap: 15px;
         padding-bottom: 20px;
-        scrollbar-width: none; /* Sembunyikan scrollbar di Firefox */
-        -ms-overflow-style: none; /* Sembunyikan scrollbar di IE */
+        scrollbar-width: none; 
+        -ms-overflow-style: none; 
     }
 
-    /* Sembunyikan scrollbar di Chrome/Safari */
     .portfolio-grid.carousel-mode::-webkit-scrollbar { display: none; }
 
-    /* Ukuran 1 Gambar di Carousel */
     .portfolio-grid.carousel-mode .portfolio-item {
-        flex: 0 0 85%; /* Gambar mengambil 85% lebar layar agar gambar sebelahnya sedikit terlihat (opsional) */
-        scroll-snap-align: center; /* Berhenti pas di tengah saat digeser */
+        flex: 0 0 85%; /* Gambar mengambil 85% lebar layar */
+        scroll-snap-align: center;
         aspect-ratio: 1 / 1;
     }
 }
