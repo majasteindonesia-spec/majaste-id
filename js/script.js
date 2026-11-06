@@ -26,11 +26,9 @@ document.addEventListener("DOMContentLoaded", function() {
     // =========================================
     // 2. LOGIKA RANDOM GAMBAR (HOME)
     // =========================================
-    function getRandomNumber(max) {
-        return Math.floor(Math.random() * max) + 1;
-    }
-
+    function getRandomNumber(max) { return Math.floor(Math.random() * max) + 1; }
     const batasMaksimalHome = 5; 
+
     const imgKaos = document.getElementById("img-kaos");
     if (imgKaos) imgKaos.src = `assets/portfolio/kaos/majaste-kaos (${getRandomNumber(batasMaksimalHome)}).jpg`;
 
@@ -44,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (imgJersey) imgJersey.src = `assets/portfolio/jersey/majaste-jersey (${getRandomNumber(batasMaksimalHome)}).jpg`;
 
     // =========================================
-    // 3. LOGIKA PORTFOLIO (FILTER & PAGINATION)
+    // 3. LOGIKA PORTFOLIO (FILTER, PAGINATION & CAROUSEL)
     // =========================================
     if (document.getElementById('portfolio-grid')) {
         const config = {
@@ -71,7 +69,13 @@ document.addEventListener("DOMContentLoaded", function() {
         const filterSelect = document.getElementById('filter-select');
 
         function checkScreenSize() {
-            if (window.innerWidth <= 768) { itemsPerPage = 4; } else { itemsPerPage = 8; }
+            // Jika di HP, tampilkan lebih banyak gambar dalam 1 halaman 
+            // karena menggunakan sistem geser (carousel).
+            if (window.innerWidth <= 768) { 
+                itemsPerPage = 10; 
+            } else { 
+                itemsPerPage = 8; 
+            }
         }
         checkScreenSize(); 
         window.addEventListener('resize', () => { checkScreenSize(); renderGallery(); });
@@ -105,13 +109,13 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         function renderGallery() {
-            grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">Memuat gambar...</p>';
+            grid.innerHTML = '<p style="text-align: center; width: 100%;">Memuat gambar...</p>';
             detectImages(currentCategory, function(images) {
                 allImages = images;
                 totalDetectedImages = images.length;
 
                 if (totalDetectedImages === 0) {
-                    grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #888;">Belum ada gambar di kategori ini.</p>';
+                    grid.innerHTML = '<p style="text-align: center; width: 100%; color: #888;">Belum ada gambar di kategori ini.</p>';
                     pageNumbers.innerHTML = '';
                     return;
                 }
@@ -198,7 +202,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // =========================================
-    // 5. LOGIKA LIGHTBOX / POP-UP (PORTFOLIO & FLOWCHART)
+    // 5. LOGIKA LIGHTBOX (PORTFOLIO & FLOWCHART)
     // =========================================
     const modal = document.getElementById("image-modal");
     const modalImg = document.getElementById("modal-img");
@@ -211,33 +215,23 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    if(closeModal) {
-        closeModal.onclick = function() { modal.style.display = "none"; }
-    }
+    if(closeModal) { closeModal.onclick = function() { modal.style.display = "none"; } }
     if(modal) {
         modal.onclick = function(e) {
             if (e.target !== modalImg) modal.style.display = "none"; 
         }
     }
 
-    // --- FLOWCHART LIGHTBOX ---
-    // Cari semua gambar di dalam .image-flow-wrapper (Cara Order)
     const flowchartImgs = document.querySelectorAll('.image-flow-wrapper img');
     flowchartImgs.forEach(img => {
-        img.style.cursor = 'zoom-in'; // Ubah kursor jadi kaca pembesar
-        img.addEventListener('click', function() {
-            openModal(this.src);
-        });
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', function() { openModal(this.src); });
     });
 
-    // --- TABEL UKURAN & HARGA (BUKA TAB BARU) ---
-    // Cari semua gambar di dalam .gambar-tabel-wrapper (Ukuran & Harga)
     const tableImgs = document.querySelectorAll('.gambar-tabel-wrapper img');
     tableImgs.forEach(img => {
         img.style.cursor = 'pointer';
-        img.addEventListener('click', function() {
-            window.open(this.src, '_blank'); // Buka di tab baru
-        });
+        img.addEventListener('click', function() { window.open(this.src, '_blank'); });
     });
 
 });

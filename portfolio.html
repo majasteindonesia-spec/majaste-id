@@ -43,7 +43,7 @@
 
     <section class="portfolio-section section-putih">
         <div class="container text-center">
-            <p class="petunjuk-klik">Klik gambar untuk memperbesar.</p>
+            <p class="petunjuk-klik">Geser gambar atau klik untuk memperbesar.</p>
             
             <div class="filter-buttons">
                 <button class="filter-btn active" data-filter="kaos">KAOS</button>
@@ -55,7 +55,6 @@
                 <button class="filter-btn" data-filter="training">TRAINING</button>
             </div>
 
-            <!-- DROPDOWN FILTER KHUSUS HP -->
             <select id="filter-select" class="filter-dropdown">
                 <option value="kaos">Pilih Kategori: KAOS</option>
                 <option value="polo">POLO</option>
@@ -66,7 +65,8 @@
                 <option value="training">TRAINING</option>
             </select>
 
-            <div class="portfolio-grid" id="portfolio-grid"></div>
+            <!-- Tambahan class carousel-mode untuk deteksi di JS -->
+            <div class="portfolio-grid carousel-mode" id="portfolio-grid"></div>
 
             <div class="pagination">
                 <button id="prev-btn" class="page-btn arrow"><i class="fa-solid fa-circle-arrow-left"></i></button>
