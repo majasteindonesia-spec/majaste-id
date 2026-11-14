@@ -91,12 +91,10 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         function renderGallery() {
-            // TAMPILKAN ANIMASI NEON MAJASTE SAAT LOADING
+            // TAMPILKAN ANIMASI TEKS & TITIK-TITIK (RINGAN)
             grid.innerHTML = `
-                <div class="neon-loader-container">
-                    <svg viewBox="0 0 500 120" width="100%" height="100%">
-                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" class="svg-text-majaste">MAJASTE</text>
-                    </svg>
+                <div class="loading-text-container">
+                    <p class="loading-text">Terima kasih telah sabar menunggu<span class="dots"></span></p>
                 </div>
             `;
 
