@@ -57,11 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const filterSelect = document.getElementById('filter-select');
 
         function checkScreenSize() {
-            if (window.innerWidth <= 768) { 
-                itemsPerPage = 100; // Tampilkan semua gambar di carousel HP
-            } else { 
-                itemsPerPage = 8; 
-            }
+            if (window.innerWidth <= 768) { itemsPerPage = 100; } else { itemsPerPage = 8; }
         }
         checkScreenSize(); 
         window.addEventListener('resize', () => { checkScreenSize(); renderGallery(); });
@@ -95,13 +91,21 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         function renderGallery() {
-            grid.innerHTML = '<p style="text-align: center; width: 100%;">Memuat gambar...</p>';
+            // TAMPILKAN ANIMASI NEON MAJASTE SAAT LOADING
+            grid.innerHTML = `
+                <div class="neon-loader-container">
+                    <svg viewBox="0 0 500 120" width="100%" height="100%">
+                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" class="svg-text-majaste">MAJASTE</text>
+                    </svg>
+                </div>
+            `;
+
             detectImages(currentCategory, function(images) {
                 allImages = images;
                 totalDetectedImages = images.length;
 
                 if (totalDetectedImages === 0) {
-                    grid.innerHTML = '<p style="text-align: center; width: 100%; color: #888;">Belum ada gambar di kategori ini.</p>';
+                    grid.innerHTML = '<p style="text-align: center; width: 100%; color: #888; padding: 50px 0;">Belum ada gambar di kategori ini.</p>';
                     pageNumbers.innerHTML = '';
                     return;
                 }
@@ -113,9 +117,16 @@ document.addEventListener("DOMContentLoaded", function() {
                 for (let i = startIndex; i < endIndex; i++) {
                     const imgDiv = document.createElement('div');
                     imgDiv.classList.add('portfolio-item');
+                    
                     const img = document.createElement('img');
                     img.src = allImages[i]; 
                     img.alt = `${currentCategory} ${i+1}`;
+                    img.loading = "lazy"; 
+                    
+                    img.onload = function() {
+                        this.classList.add('loaded');
+                    };
+
                     img.onclick = function() { openModal(this.src); };
                     imgDiv.appendChild(img);
                     grid.appendChild(imgDiv);
@@ -128,7 +139,6 @@ document.addEventListener("DOMContentLoaded", function() {
             pageNumbers.innerHTML = '';
             const totalPages = Math.ceil(totalDetectedImages / itemsPerPage);
             
-            // Jangan tampilkan pagination jika di HP atau hanya 1 halaman
             if (totalPages <= 1 || window.innerWidth <= 768) return; 
 
             for (let i = 1; i <= totalPages; i++) {
